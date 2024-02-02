@@ -19,10 +19,10 @@
 
 @section('head')
     <tr>
-        <th scope="col" class="px-4 py-4">Titre</th>
-        <th scope="col" class="px-4 py-4">Date d'échéance</th>
-        <th scope="col" class="px-4 py-4">Categorie</th>
-        <th scope="col" class="px-4 py-4">Utilisateur</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.title') }}</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.due_date') }}</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.category_id') }}</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.user_id') }}</th>
         <th scope="col" class="px-4 py-4 flex justify-end">Actions</th>
     </tr>
 @endsection
@@ -99,7 +99,7 @@
                 {{ $tasks->total() }}
             </span>
             <span>
-                {{ $tasks->links('pagination::tailwind') }}
+                {{ $tasks->links() }}
             </span>
         </span>
     @endif

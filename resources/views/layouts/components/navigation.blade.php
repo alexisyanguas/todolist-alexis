@@ -20,6 +20,9 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
+            <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                Calendrier
+            </a>
             <a href="{{ route('tasks.index') }}"
                 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                 Tâches
@@ -28,9 +31,6 @@
                 class="block mt-4 lg:inline-block lg:mt-0
                 text-teal-200 hover:text-white mr-4">
                 Catégories
-            </a>
-            <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                Utilisateurs
             </a>
         </div>
     </div>

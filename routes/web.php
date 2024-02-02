@@ -4,6 +4,7 @@ use App\Http\Controllers\{
     CategoryController,
     TaskController,
 };
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TaskController::class, 'index']);
+Route::get('/', function () {
+    $tasks = Task::with("category")->get();
+    $events = $tasks->map(function ($task) {
+        return [
+            "title" => $task->title . " (" . $task->category->name . ")",
+            "start" => $task->due_date,
+            "url" => route("tasks.edit", $task),
+            "backgroundColor" => $task->category->color,
+        ];
+    });
+
+    return view('calendar.index', compact("events"));
+});
 
 
 /**

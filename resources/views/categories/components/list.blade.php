@@ -19,9 +19,9 @@
 
 @section('head')
     <tr>
-        <th scope="col" class="px-4 py-4">Nom</th>
-        <th scope="col" class="px-4 py-4">Couleur</th>
-        <th scope="col" class="px-4 py-4">Icône</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.name') }}</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.color') }}</th>
+        <th scope="col" class="px-4 py-4">{{ __('validation.attributes.icon') }}</th>
         <th scope="col" class="px-4 py-4 flex justify-end">Actions</th>
     </tr>
 @endsection
@@ -87,7 +87,7 @@
                 {{ $categories->total() }}
             </span>
             <span>
-                {{ $categories->links('pagination::tailwind') }}
+                {{ $categories->links() }}
             </span>
         </span>
     @endif
